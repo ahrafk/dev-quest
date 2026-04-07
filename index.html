@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahraf Khatri | Dev Quest</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div id="loading-inner">
+      <div id="loading-logo">AK</div>
+      <div id="loading-title">DEV QUEST</div>
+      <div id="loading-sub">Initializing world...</div>
+      <div id="loading-bar-wrap">
+        <div id="loading-bar"></div>
+      </div>
+      <div id="loading-percent">0%</div>
+    </div>
+  </div>
+
+  <!-- Game HUD -->
+  <div id="hud">
+    <div id="hud-top">
+      <div id="player-info">
+        <div id="player-avatar">AK</div>
+        <div id="player-details">
+          <div id="player-name">Ahraf Khatri</div>
+          <div id="player-class">Data Engineer · Software Developer</div>
+        </div>
+      </div>
+      <nav id="zone-nav">
+        <button class="nav-btn active" data-zone="hero">Home</button>
+        <button class="nav-btn" data-zone="skills">Skills</button>
+        <button class="nav-btn" data-zone="experience">Experience</button>
+        <button class="nav-btn" data-zone="projects">Projects</button>
+        <button class="nav-btn" data-zone="contact">Contact</button>
+      </nav>
+    </div>
+    <div id="hud-bottom">
+      <div id="controls-hint">
+        <span>🖱 Drag to orbit</span>
+        <span>🖲 Scroll to zoom</span>
+        <span>Click zones to explore</span>
+      </div>
+      <div id="current-zone-label">HERO ZONE</div>
+    </div>
+  </div>
+
+  <!-- Info Panel (slides in when clicking a zone) -->
+  <div id="info-panel">
+    <button id="info-close">✕</button>
+    <div id="info-content"></div>
+  </div>
+
+  <!-- Zone flash overlay -->
+  <div id="zone-flash"></div>
+
+  <!-- Minimap legend -->
+  <div id="minimap-legend">
+    <div><span style="background:#7c6eed"></span>H — Hero</div>
+    <div><span style="background:#1dd4a0"></span>S — Skills</div>
+    <div><span style="background:#378ADD"></span>E — Experience</div>
+    <div><span style="background:#f06a3f"></span>P — Projects</div>
+    <div><span style="background:#e84393"></span>C — Contact</div>
+    <div style="margin-top:4px;color:#555">● You</div>
+  </div>
+
+  <!-- Keyboard shortcuts -->
+  <div id="key-hints">
+    <div><kbd>1</kbd>–<kbd>5</kbd> Jump to zone</div>
+    <div><kbd>Esc</kbd> Close panel</div>
+    <div><kbd>Click</kbd> Inspect object</div>
+  </div>
+
+  <!-- Three.js canvas -->
+  <canvas id="canvas"></canvas>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
